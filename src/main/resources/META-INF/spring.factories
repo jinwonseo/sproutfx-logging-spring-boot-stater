@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+    kr.sproutfx.common.logging.property.LoggingProperties,\
+    kr.sproutfx.common.logging.property.LogstashProperties,\
+    kr.sproutfx.common.logging.configuration.LoggingConfiguration
