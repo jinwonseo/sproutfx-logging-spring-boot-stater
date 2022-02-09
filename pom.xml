@@ -12,7 +12,7 @@
 	<artifactId>sproutfx-common-logging-spring-boot-stater</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>sproutfx-common-logging-spring-boot-stater</name>
-	<description>Sproutfx common logging spring boot starter</description>
+	<description>SproutFx common logging spring boot starter</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
