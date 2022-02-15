@@ -15,12 +15,14 @@ stages:
 maven-build:
   image: maven:3.6.3-openjdk-11-slim
   stage: build
-  script: "mvn $MAVEN_CLI_OPTS clean package -DskipTests"
+  script: 
+    - "mvn $MAVEN_CLI_OPTS clean package -DskipTests"
 
 maven-test:
   image: maven:3.6.3-openjdk-11-slim
   stage: test
-  script: "mvn $MAVEN_CLI_OPTS test"
+  script: 
+    - "mvn $MAVEN_CLI_OPTS test"
 
 maven-deploy:
   image: maven:3.6.3-openjdk-11-slim
