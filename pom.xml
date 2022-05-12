@@ -21,6 +21,16 @@
 			<id>gitlab-maven</id>
 			<url>https://gitlab.com/api/v4/groups/16033742/-/packages/maven/</url>
 		</repository>
+		<repository>
+			<id>sproutfx-maven</id>
+			<url>http://nexus.sproutfx.kr/repository/maven-public/</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
 	</repositories>
 	<distributionManagement>
 		<repository>
