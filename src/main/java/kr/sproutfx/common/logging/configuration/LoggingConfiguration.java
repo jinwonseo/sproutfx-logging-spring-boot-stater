@@ -35,11 +35,11 @@ public class LoggingConfiguration {
         LoggerContext loggerContext = (LoggerContext) LoggerFactory.getILoggerFactory();
 
         addLogstashAppender(loggerContext);
+        
+        logger.info("Initializing sproutfx.common.auto-configuration.logging");
     }
 
     private void addLogstashAppender(LoggerContext context) {
-        logger.info("Initializing sproutfx.common.auto-configuration.logging");
-
         LogstashTcpSocketAppender logstashAppender = new LogstashTcpSocketAppender();
         logstashAppender.setName(this.logstashProperties.getAppenderName());
         logstashAppender.setContext(context);
@@ -67,7 +67,5 @@ public class LoggingConfiguration {
         asyncLogstashAppender.start();
         
         context.getLogger("ROOT").addAppender(asyncLogstashAppender);
-
-        logger.info("Initialized sproutfx.common.auto-configuration.logging");
     }
 }
