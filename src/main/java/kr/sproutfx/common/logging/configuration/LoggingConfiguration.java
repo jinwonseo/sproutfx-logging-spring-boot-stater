@@ -36,7 +36,7 @@ public class LoggingConfiguration {
 
         addLogstashAppender(loggerContext);
         
-        logger.info("Initializing sproutfx.common.auto-configuration.logging");
+        logger.info("Initialized sproutfx.common.auto-configuration.logging");
     }
 
     private void addLogstashAppender(LoggerContext context) {
