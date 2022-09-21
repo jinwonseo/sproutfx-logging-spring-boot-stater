@@ -18,11 +18,7 @@
 	</properties>
 	<repositories>
 		<repository>
-			<id>gitlab-maven</id>
-			<url>https://gitlab.com/api/v4/groups/16033742/-/packages/maven/</url>
-		</repository>
-		<repository>
-			<id>sproutfx-maven</id>
+			<id>private-nexus3-maven</id>
 			<url>http://nexus.sproutfx.kr/repository/maven-public/</url>
 			<snapshots>
 				<enabled>false</enabled>
@@ -31,14 +27,44 @@
 				<enabled>true</enabled>
 			</releases>
 		</repository>
+		<repository>
+			<id>private-gitlab-maven</id>
+			<url>https://gitlab.sproutfx.kr/api/v4/groups/5/-/packages/maven</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>public-gitlab-maven</id>
+			<url>https://gitlab.com/api/v4/groups/16033742/-/packages/maven/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>ci-gitlab-maven</id>
+			<url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+		</repository>
 	</repositories>
 	<distributionManagement>
 		<repository>
-			<id>gitlab-maven</id>
+			<id>ci-gitlab-maven</id>
 			<url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
 		</repository>
 		<snapshotRepository>
-			<id>gitlab-maven</id>
+			<id>ci-gitlab-maven</id>
 			<url>${CI_API_V4_URL}/projects/${env.CI_PROJECT_ID}/packages/maven</url>
 		</snapshotRepository>
 	</distributionManagement>
