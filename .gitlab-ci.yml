@@ -24,11 +24,20 @@ maven-test:
   script: 
     - "mvn $MAVEN_CLI_OPTS test"
 
-maven-deploy:
+maven-deploy-private-gitlab-package-registry:
   image: maven:3.6.3-openjdk-11-slim
   stage: deploy
   script:
-    - "mvn $MAVEN_CLI_OPTS deploy"
+    - "mvn $MAVEN_CLI_OPTS deploy -P private-gitlab-package-registry-deploy"
   only:
     refs:
-      - main
+      - cio
+
+maven-deploy-private-nexus-repository:
+  image: maven:3.6.3-openjdk-11-slim
+  stage: deploy
+  script:
+    - "mvn $MAVEN_CLI_OPTS deploy -P private-nexus-repository-deploy"
+  only:
+    refs:
+      - cio
