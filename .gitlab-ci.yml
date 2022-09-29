@@ -31,7 +31,7 @@ maven-deploy-private-gitlab-package-registry:
     - "mvn $MAVEN_CLI_OPTS deploy -P private-gitlab-package-registry-deploy"
   only:
     refs:
-      - cio
+      - main
 
 maven-deploy-private-nexus-repository:
   image: maven:3.6.3-openjdk-11-slim
@@ -40,4 +40,4 @@ maven-deploy-private-nexus-repository:
     - "mvn $MAVEN_CLI_OPTS deploy -P private-nexus-repository-deploy"
   only:
     refs:
-      - cio
+      - main
