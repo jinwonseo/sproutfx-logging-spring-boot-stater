@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>kr.sproutfx.common</groupId>
-	<artifactId>sproutfx-common-logging-spring-boot-stater</artifactId>
+	<artifactId>sproutfx-common-logging-spring-boot-starter</artifactId>
 	<version>0.0.4-SNAPSHOT</version>
-	<name>sproutfx-common-logging-spring-boot-stater</name>
+	<name>sproutfx-common-logging-spring-boot-starter</name>
 	<description>SproutFx common logging spring boot starter</description>
 	<properties>
 		<java.version>11</java.version>
