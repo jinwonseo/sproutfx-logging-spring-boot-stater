@@ -1,6 +1,25 @@
 <settings xmlns="http://maven.apache.org/SETTINGS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.1.0 http://maven.apache.org/xsd/settings-1.1.0.xsd">
   <servers>
+    <!-- private nexus maven repository -->
+    <server>
+      <id>private-nexus3-maven</id>
+      <username>gitlab-ci</username>
+      <password>gitlab-ci</password>
+    </server>
+    <!-- private nexus maven releases -->
+    <server>
+      <id>private-nexus3-maven-releases</id>
+      <username>gitlab-ci</username>
+      <password>gitlab-ci</password>
+    </server>
+    <!-- private nexus maven snapshots -->
+    <server>
+      <id>private-nexus3-maven-snapshots</id>
+      <username>gitlab-ci</username>
+      <password>gitlab-ci</password>
+    </server>
+    <!-- private gitlab package registry -->
     <server>
       <id>private-gitlab-maven</id>
       <configuration>
@@ -12,17 +31,7 @@
         </httpHeaders>
       </configuration>
     </server>
-    <server>
-      <id>public-gitlab-maven</id>
-      <configuration>
-        <httpHeaders>
-          <property>
-            <name>Job-Token</name>
-            <value>${env.CI_JOB_TOKEN}</value>
-          </property>
-        </httpHeaders>
-      </configuration>
-    </server>
+    <!-- gitlab package registry (CI) -->
     <server>
       <id>ci-gitlab-maven</id>
       <configuration>
@@ -35,4 +44,20 @@
       </configuration>
     </server>
   </servers>
+  <mirrors>
+    <!-- Platform nexus repo -->
+    <mirror>
+      <id>private-nexus3-maven</id>
+      <mirrorOf>*</mirrorOf>
+      <name>private-nexus3-maven</name>
+      <url>http://nexus.sproutfx.kr/repository/maven-public/</url>
+    </mirror>
+    <!-- Platform gitlab repo -->
+    <mirror>
+      <id>private-gitlab-maven</id>
+      <mirrorOf>snapshot, release</mirrorOf>
+      <name>private-gitlab-maven</name>
+			<url>https://gitlab.sproutfx.kr/api/v4/groups/14/-/packages/maven/</url>
+    </mirror>
+  </mirrors>
 </settings>
